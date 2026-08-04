@@ -4,41 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DGDsmart — Computers & Electronics | Gostivar, North Macedonia</title>
+    <title>DGDsmart — Computer Store &amp; Repair Service | Gostivar, North Macedonia</title>
     <meta name="description"
-        content="DGDsmart is your premier destination for computers, electronics, accessories, and professional repair services in Gostivar, North Macedonia.">
+        content="DGDsmart in Gostivar: laptops, desktops, custom PC builds, tablets and accessories — plus expert repair for computers, phones and electronics. JNA 71, Gostivar.">
     <meta name="keywords"
-        content="DGDsmart, computers, electronics, laptop repair, accessories, Gostivar, North Macedonia, tech store">
-    <meta property="og:title" content="DGDsmart — Computers & Electronics">
+        content="DGDsmart, computer shop Gostivar, laptop repair Gostivar, PC service, custom PC build, electronics repair, screen replacement, data recovery, North Macedonia">
+    <meta name="theme-color" content="#060A12">
+    <link rel="canonical" href="https://dgdsmart.mk/">
+    <meta property="og:title" content="DGDsmart — Computer Store &amp; Repair Service">
     <meta property="og:description"
-        content="Premium tech store in Gostivar. Computers, laptops, accessories & expert repair services.">
+        content="Computers, laptops, accessories and expert repair service in Gostivar, North Macedonia.">
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dgdsmart.mk/">
     <meta property="og:image" content="images/logo.png">
+    <meta name="twitter:card" content="summary_large_image">
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="image" href="images/store-display.png">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Local SEO: helps Google show the shop in Maps / local results.
+         Update the URL, priceRange and any details if they change. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": ["ElectronicsStore", "ComputerStore"],
+      "name": "DGDsmart",
+      "image": "https://dgdsmart.mk/images/logo.png",
+      "url": "https://dgdsmart.mk/",
+      "telephone": "+38970251225",
+      "email": "dgdsmart@gmail.com",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "JNA 71",
+        "addressLocality": "Gostivar",
+        "postalCode": "1230",
+        "addressCountry": "MK"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 41.7937657,
+        "longitude": 20.907689
+      },
+      "openingHoursSpecification": [{
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "09:00",
+        "closes": "19:00"
+      }],
+      "sameAs": ["https://www.instagram.com/dgdsmart"],
+      "makesOffer": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Computer and laptop repair" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Phone and tablet repair" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Custom PC builds and upgrades" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Data recovery" } }
+      ]
+    }
+    </script>
 </head>
 
 <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
     <!-- Navbar -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#hero" class="nav-logo">
-                <img src="images/logo.png" alt="DGDsmart Logo" class="logo-img">
+            <a href="#hero" class="nav-logo" aria-label="DGDsmart home">
+                <img src="images/logo.png" alt="DGDsmart" class="logo-img" width="140" height="40">
             </a>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#hero" class="nav-link active">Home</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#services" class="nav-link">Services</a></li>
+                <li><a href="#repairs" class="nav-link">Repairs</a></li>
                 <li><a href="#products" class="nav-link">Products</a></li>
-                <li><a href="#why-us" class="nav-link">Why Us</a></li>
+                <li><a href="#faq" class="nav-link">FAQ</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-cta-item"><a href="#book" class="btn btn-accent btn-sm nav-cta">Book a Repair</a></li>
             </ul>
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"
+                aria-controls="navLinks">
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
                 <span class="hamburger-line"></span>
@@ -46,495 +96,1055 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero-bg">
-            <img src="images/hero-store.png" alt="DGDsmart Tech Store" class="hero-bg-img">
-            <div class="hero-overlay"></div>
-        </div>
-        <div class="hero-particles" id="particles"></div>
-        <div class="hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Gostivar, North Macedonia
+    <main id="main">
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero-bg">
+                <img src="images/store-display.png" alt="" class="hero-bg-img" aria-hidden="true">
+                <div class="hero-overlay"></div>
             </div>
-            <h1 class="hero-title">
-                Your <span class="gradient-text">Smart</span> Choice<br>
-                for Technology
-            </h1>
-            <p class="hero-subtitle">
-                Premium computers, laptops, electronics, accessories, and expert repair services — all under one roof.
-            </p>
-            <div class="hero-cta">
-                <a href="#contact" class="btn btn-primary">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <path
-                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                    </svg>
-                    Get in Touch
-                </a>
-                <a href="#services" class="btn btn-outline">
-                    Our Services
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <line x1="5" y1="12" x2="19" y2="12" />
-                        <polyline points="12 5 19 12 12 19" />
-                    </svg>
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-target="184">0</span>
-                    <span class="stat-label">Happy Customers</span>
+            <div class="hero-grid-lines" aria-hidden="true"></div>
+            <div class="hero-particles" id="particles" aria-hidden="true"></div>
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Store &amp; Service Centre — Gostivar, North Macedonia
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
-                    <span class="stat-label">Products</span>
+                <h1 class="hero-title">
+                    We Sell It. We Fix It.<br>
+                    <span class="gradient-text">We Keep It Running.</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Laptops, desktops, custom PC builds and accessories — backed by a real workshop that repairs
+                    computers, phones, tablets and electronics right here in Gostivar.
+                </p>
+                <div class="hero-cta">
+                    <a href="#book" class="btn btn-accent">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                        </svg>
+                        Book a Repair
+                    </a>
+                    <a href="#products" class="btn btn-outline">
+                        Browse Products
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </a>
                 </div>
-                <div class="stat-divider"></div>
-                <div class="stat-item">
-                    <span class="stat-number" data-target="3">0</span>
-                    <span class="stat-label">Years Experience</span>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="184">0</span>
+                        <span class="stat-label">Happy Customers</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="500">0</span><span class="stat-plus">+</span>
+                        <span class="stat-label">Products</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number" data-target="3">0</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="mouse">
-                <div class="wheel"></div>
+            <div class="scroll-indicator" aria-hidden="true">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll Down</span>
             </div>
-            <span>Scroll Down</span>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">About Us</span>
-                <h2 class="section-title">More Than Just a <span class="gradient-text">Tech Store</span></h2>
-                <p class="section-desc">We're your trusted technology partner in the heart of Gostivar.</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-card glass-card">
-                    <div class="about-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3>Expert Knowledge</h3>
-                    <p>Our team stays ahead of the latest technology trends, ensuring you get the best advice for every
-                        purchase and repair.</p>
-                </div>
-                <div class="about-card glass-card">
-                    <div class="about-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <!-- Trust Bar -->
+        <section class="trust-bar" aria-label="What we promise">
+            <div class="container">
+                <ul class="trust-list">
+                    <li class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            <polyline points="9 11 11.5 13.5 15.5 9" />
                         </svg>
-                    </div>
-                    <h3>Quality Guaranteed</h3>
-                    <p>Every product we sell comes with our quality assurance. We only stock genuine, tested devices and
-                        accessories.</p>
-                </div>
-                <div class="about-card glass-card">
-                    <div class="about-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <span><strong>Genuine Parts</strong>Original components only</span>
+                    </li>
+                    <li class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M20 7h-9M14 17H5" />
+                            <circle cx="17" cy="17" r="3" />
+                            <circle cx="7" cy="7" r="3" />
+                        </svg>
+                        <span><strong>In-House Workshop</strong>Repairs done on site</span>
+                    </li>
+                    <li class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                             <circle cx="12" cy="12" r="10" />
                             <polyline points="12 6 12 12 16 14" />
                         </svg>
-                    </div>
-                    <h3>Fast Service</h3>
-                    <p>Time matters. We provide quick turnaround on repairs and always have the latest products ready
-                        for you.</p>
-                </div>
-                <div class="about-card glass-card">
-                    <div class="about-icon">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                        <span><strong>Fast Turnaround</strong>We respect your time</span>
+                    </li>
+                    <li class="trust-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M9 12l2 2 4-4" />
+                            <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z" />
                         </svg>
-                    </div>
-                    <h3>Customer First</h3>
-                    <p>Your satisfaction is our priority. We build lasting relationships through transparent, friendly
-                        service.</p>
-                </div>
+                        <span><strong>Warranty Included</strong>On products and repairs</span>
+                    </li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Services Section -->
-    <section class="section services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">What We Do</span>
-                <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
-                <p class="section-desc">From sales to repairs, we've got you covered with comprehensive tech solutions.
-                </p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" id="service-repair">
-                    <div class="service-image">
-                        <img src="images/repair-service.png" alt="Computer & Device Repair" loading="lazy">
-                        <div class="service-image-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
-                            </svg>
-                        </div>
-                        <h3>Device Repair</h3>
-                        <p>Professional repair for tablets, laptops, and computers. Screen replacements, hardware
-                            upgrades, software fixes, and more.</p>
-                        <ul class="service-features">
-                            <li>Screen Replacement</li>
-                            <li>Battery Replacement</li>
-                            <li>Software Troubleshooting</li>
-                            <li>Data Recovery</li>
-                        </ul>
-                    </div>
+        <!-- About Section -->
+        <section class="section about" id="about">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">About Us</span>
+                    <h2 class="section-title">More Than Just a <span class="gradient-text">Tech Store</span></h2>
+                    <p class="section-desc">A shop and a service centre in one — so whatever happens to your device,
+                        there is one address to come back to.</p>
                 </div>
-                <div class="service-card" id="service-sales">
-                    <div class="service-image">
-                        <img src="images/hero-store.png" alt="Computer & Electronics Sales" loading="lazy">
-                        <div class="service-image-overlay"></div>
-                    </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <div class="about-grid">
+                    <div class="about-card glass-card">
+                        <div class="about-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                                 <line x1="8" y1="21" x2="16" y2="21" />
                                 <line x1="12" y1="17" x2="12" y2="21" />
                             </svg>
                         </div>
-                        <h3>Computer Sales</h3>
-                        <p>Wide range of desktops, laptops, and components from top brands. Custom builds and
-                            configurations available.</p>
-                        <ul class="service-features">
-                            <li>Laptops & Desktops</li>
-                            <li>Custom PC Builds</li>
-                            <li>Peripherals & Components</li>
-                            <li>Software Licensing</li>
+                        <h3>Expert Knowledge</h3>
+                        <p>Our team stays ahead of the latest technology, so you get honest advice on every purchase and
+                            every repair.</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="about-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                        </div>
+                        <h3>Quality Guaranteed</h3>
+                        <p>Every product we sell comes with our quality assurance. We only stock genuine, tested devices
+                            and accessories.</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="about-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <polyline points="12 6 12 12 16 14" />
+                            </svg>
+                        </div>
+                        <h3>Fast Service</h3>
+                        <p>Time matters. We diagnose quickly, quote clearly, and get your device back to you without the
+                            waiting game.</p>
+                    </div>
+                    <div class="about-card glass-card">
+                        <div class="about-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                            </svg>
+                        </div>
+                        <h3>Customer First</h3>
+                        <p>Your satisfaction is our priority. We build lasting relationships through transparent,
+                            friendly service.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section services" id="services">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">What We Do</span>
+                    <h2 class="section-title">Our <span class="gradient-text">Services</span></h2>
+                    <p class="section-desc">Sales, repairs and everything in between — for computers, phones and
+                        electronics.</p>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card" id="service-repair">
+                        <div class="service-image">
+                            <img src="images/repair-service.png"
+                                alt="Technician soldering a device board under a microscope" loading="lazy"
+                                width="1024" height="1024">
+                            <div class="service-image-overlay"></div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                                </svg>
+                            </div>
+                            <h3>Repair &amp; Service</h3>
+                            <p>Board-level and component repair for laptops, desktops, tablets and phones — from cracked
+                                screens to dead motherboards.</p>
+                            <ul class="service-features">
+                                <li>Screen &amp; battery replacement</li>
+                                <li>Motherboard &amp; charging port repair</li>
+                                <li>Virus removal &amp; OS reinstall</li>
+                                <li>Data recovery &amp; backup</li>
+                            </ul>
+                            <a href="#book" class="service-link">Book a repair
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-card" id="service-sales">
+                        <div class="service-image">
+                            <img src="images/store-display.png"
+                                alt="Laptops and electronics on display in the store" loading="lazy" width="640"
+                                height="430">
+                            <div class="service-image-overlay"></div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                    <line x1="8" y1="21" x2="16" y2="21" />
+                                    <line x1="12" y1="17" x2="12" y2="21" />
+                                </svg>
+                            </div>
+                            <h3>Computers &amp; Custom Builds</h3>
+                            <p>Desktops, laptops and components from the brands you know — plus gaming and office PCs
+                                built to your budget.</p>
+                            <ul class="service-features">
+                                <li>Laptops &amp; desktops</li>
+                                <li>Custom gaming &amp; office builds</li>
+                                <li>RAM, SSD &amp; GPU upgrades</li>
+                                <li>Software licensing &amp; setup</li>
+                            </ul>
+                            <a href="#products" class="service-link">See categories
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="service-card" id="service-accessories">
+                        <div class="service-image">
+                            <img src="images/accessories.png" alt="Cases, cables, chargers, earbuds and smartwatches"
+                                loading="lazy" width="1024" height="1024">
+                            <div class="service-image-overlay"></div>
+                        </div>
+                        <div class="service-content">
+                            <div class="service-icon">
+                                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M18 20V10" />
+                                    <path d="M12 20V4" />
+                                    <path d="M6 20v-6" />
+                                </svg>
+                            </div>
+                            <h3>Accessories &amp; Peripherals</h3>
+                            <p>Chargers, cables, earbuds, smartwatches, power banks, keyboards and everything your setup
+                                is missing.</p>
+                            <ul class="service-features">
+                                <li>Chargers &amp; power banks</li>
+                                <li>Cables &amp; adapters</li>
+                                <li>Audio &amp; wearables</li>
+                                <li>Keyboards, mice &amp; cases</li>
+                            </ul>
+                            <a href="#contact" class="service-link">Ask availability
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="5" y1="12" x2="19" y2="12" />
+                                    <polyline points="12 5 19 12 12 19" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Repair Process -->
+        <section class="section process" id="process">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">How It Works</span>
+                    <h2 class="section-title">Your Repair, <span class="gradient-text">Step by Step</span></h2>
+                    <p class="section-desc">No surprises. You know what is happening to your device at every stage.</p>
+                </div>
+                <ol class="process-steps">
+                    <li class="process-step">
+                        <div class="process-marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                            </svg>
+                            <span class="process-num">01</span>
+                        </div>
+                        <h3>Tell Us the Problem</h3>
+                        <p>Drop by the shop, call us, or send the repair form on this page. Describe the device and what
+                            went wrong.</p>
+                    </li>
+                    <li class="process-step">
+                        <div class="process-marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <circle cx="11" cy="11" r="8" />
+                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                            </svg>
+                            <span class="process-num">02</span>
+                        </div>
+                        <h3>Diagnostics</h3>
+                        <p>We open it up on the bench and find the real cause — not just the symptom you can see from the
+                            outside.</p>
+                    </li>
+                    <li class="process-step">
+                        <div class="process-marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="9" y1="15" x2="15" y2="15" />
+                            </svg>
+                            <span class="process-num">03</span>
+                        </div>
+                        <h3>Clear Quote</h3>
+                        <p>You get the price and the timeframe before any work starts. Not worth fixing? We tell you that
+                            too.</p>
+                    </li>
+                    <li class="process-step">
+                        <div class="process-marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+                            </svg>
+                            <span class="process-num">04</span>
+                        </div>
+                        <h3>Repair &amp; Test</h3>
+                        <p>Genuine parts, proper tools, then a full test cycle so the device leaves working the way it
+                            should.</p>
+                    </li>
+                    <li class="process-step">
+                        <div class="process-marker">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                            <span class="process-num">05</span>
+                        </div>
+                        <h3>Pick Up &amp; Warranty</h3>
+                        <p>Collect your device, and keep the warranty on the work we did. Something off? Bring it back to
+                            us.</p>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Repair Catalog -->
+        <section class="section repairs" id="repairs">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Repair Catalog</span>
+                    <h2 class="section-title">What We <span class="gradient-text">Fix</span></h2>
+                    <p class="section-desc">Pick your device type to see the repairs we handle in the workshop.</p>
+                </div>
+
+                <div class="repair-tabs" role="tablist" aria-label="Device type">
+                    <button class="repair-tab active" role="tab" id="tab-computers" aria-selected="true"
+                        aria-controls="panel-computers">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                            <line x1="8" y1="21" x2="16" y2="21" />
+                            <line x1="12" y1="17" x2="12" y2="21" />
+                        </svg>
+                        Laptops &amp; Desktops
+                    </button>
+                    <button class="repair-tab" role="tab" id="tab-mobile" aria-selected="false"
+                        aria-controls="panel-mobile" tabindex="-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                            <line x1="12" y1="18" x2="12.01" y2="18" />
+                        </svg>
+                        Phones &amp; Tablets
+                    </button>
+                    <button class="repair-tab" role="tab" id="tab-other" aria-selected="false"
+                        aria-controls="panel-other" tabindex="-1">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                            <path
+                                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                        </svg>
+                        Other Electronics
+                    </button>
+                </div>
+
+                <!-- NOTE FOR THE OWNER:
+                     Each repair item can show a price and a turnaround time. They are left out on
+                     purpose so nothing inaccurate goes live. To add them, drop these two lines
+                     inside any .repair-item, right after the <p>:
+
+                       <span class="repair-price">from 1.500 ден</span>
+                       <span class="repair-time">1–2 days</span>
+                -->
+                <div class="repair-panels">
+                    <div class="repair-panel active" id="panel-computers" role="tabpanel" aria-labelledby="tab-computers">
+                        <ul class="repair-list">
+                            <li class="repair-item">
+                                <h3>Screen &amp; Hinge Replacement</h3>
+                                <p>Cracked, flickering or dead laptop displays, plus broken hinges and loose lids.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Battery &amp; Charging Issues</h3>
+                                <p>Batteries that die in minutes, chargers that no longer charge, DC jack replacement.
+                                </p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Overheating &amp; Cleaning</h3>
+                                <p>Thermal paste renewal, fan and heatsink cleaning, for machines that throttle or shut
+                                    down.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>SSD, RAM &amp; Storage Upgrades</h3>
+                                <p>Turn a slow machine into a fast one, with your data migrated across.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Windows &amp; Software Repair</h3>
+                                <p>Boot failures, blue screens, driver problems, virus removal, clean OS reinstall.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Motherboard &amp; Liquid Damage</h3>
+                                <p>Board-level diagnostics and component work on machines that will not power on.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Data Recovery &amp; Backup</h3>
+                                <p>Files rescued from failing drives, and a backup set up so it does not happen twice.
+                                </p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Keyboard &amp; Trackpad</h3>
+                                <p>Dead keys, spilled drinks, unresponsive trackpads and worn palm rests.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="repair-panel" id="panel-mobile" role="tabpanel" aria-labelledby="tab-mobile" hidden>
+                        <ul class="repair-list">
+                            <li class="repair-item">
+                                <h3>Screen &amp; Glass Replacement</h3>
+                                <p>Cracked glass, dead touch, lines across the display — phones and tablets.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Battery Replacement</h3>
+                                <p>Fast-draining or swollen batteries swapped for fresh cells.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Charging Port Repair</h3>
+                                <p>Ports that only charge at an angle, or stopped charging altogether.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Camera, Speaker &amp; Mic</h3>
+                                <p>Blurry cameras, silent speakers, callers who cannot hear you.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Water Damage Treatment</h3>
+                                <p>Board cleaning and corrosion treatment after a spill or a swim.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Software &amp; Data Transfer</h3>
+                                <p>Stuck updates, boot loops, and moving everything to a new device.</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="repair-panel" id="panel-other" role="tabpanel" aria-labelledby="tab-other" hidden>
+                        <ul class="repair-list">
+                            <li class="repair-item">
+                                <h3>Smartwatches &amp; Wearables</h3>
+                                <p>Screens, batteries and straps for watches and fitness trackers.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Headphones &amp; Speakers</h3>
+                                <p>Charging cases, cable breaks and audio that only plays on one side.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Game Consoles</h3>
+                                <p>Overheating, HDMI ports, drives and controllers that drift.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Printers &amp; Peripherals</h3>
+                                <p>Monitors, printers, routers and everything else plugged into your desk.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Power Supplies &amp; Adapters</h3>
+                                <p>Chargers and PSUs tested, repaired or matched with a correct replacement.</p>
+                            </li>
+                            <li class="repair-item">
+                                <h3>Not Sure What It Is?</h3>
+                                <p>Bring it in. If it has a circuit board, we will take a look at it.</p>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="service-card" id="service-accessories">
-                    <div class="service-image">
-                        <img src="images/accessories.png" alt="Tech Accessories" loading="lazy">
-                        <div class="service-image-overlay"></div>
+
+                <div class="repair-note glass-card">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10" />
+                        <line x1="12" y1="16" x2="12" y2="12" />
+                        <line x1="12" y1="8" x2="12.01" y2="8" />
+                    </svg>
+                    <p>Price depends on the model and the parts involved, so we quote after diagnostics — always before
+                        any work begins. <a href="#book">Send us the details</a> and we will come back with a figure.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Brands Section -->
+        <section class="section products" id="products">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Our Brands</span>
+                    <h2 class="section-title">Trusted <span class="gradient-text">Brands</span> We Carry</h2>
+                    <p class="section-desc">We partner with the world's leading technology brands to bring you the best.
+                    </p>
+                </div>
+                <div class="brands-marquee">
+                    <div class="brands-track">
+                        <div class="brand-item"><span class="brand-name">Apple</span></div>
+                        <div class="brand-item"><span class="brand-name">Samsung</span></div>
+                        <div class="brand-item"><span class="brand-name">Xiaomi</span></div>
+                        <div class="brand-item"><span class="brand-name">Lenovo</span></div>
+                        <div class="brand-item"><span class="brand-name">HP</span></div>
+                        <div class="brand-item"><span class="brand-name">Dell</span></div>
+                        <div class="brand-item"><span class="brand-name">Asus</span></div>
+                        <div class="brand-item"><span class="brand-name">Huawei</span></div>
+                        <div class="brand-item"><span class="brand-name">JBL</span></div>
+                        <div class="brand-item"><span class="brand-name">Anker</span></div>
+                        <!-- Duplicate for seamless loop -->
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Apple</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Samsung</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Xiaomi</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Lenovo</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">HP</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Dell</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Asus</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Huawei</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">JBL</span></div>
+                        <div class="brand-item" aria-hidden="true"><span class="brand-name">Anker</span></div>
                     </div>
-                    <div class="service-content">
-                        <div class="service-icon">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                </div>
+                <div class="product-categories">
+                    <div class="category-card" id="cat-desktops">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                        </div>
+                        <h3>Desktops &amp; Custom PCs</h3>
+                        <p>Office, gaming and workstation builds — pre-built or made to your spec</p>
+                    </div>
+                    <div class="category-card" id="cat-laptops">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path
+                                    d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
+                            </svg>
+                        </div>
+                        <h3>Laptops</h3>
+                        <p>Study, work and gaming machines across every budget</p>
+                    </div>
+                    <div class="category-card" id="cat-components">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="4" y="4" width="16" height="16" rx="2" />
+                                <rect x="9" y="9" width="6" height="6" />
+                                <path d="M9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2" />
+                            </svg>
+                        </div>
+                        <h3>Components &amp; Upgrades</h3>
+                        <p>SSDs, RAM, graphics cards, power supplies and cooling</p>
+                    </div>
+                    <div class="category-card" id="cat-tablets">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
+                                <line x1="12" y1="18" x2="12.01" y2="18" />
+                            </svg>
+                        </div>
+                        <h3>Tablets &amp; Phones</h3>
+                        <p>Portable power for creativity, study and entertainment</p>
+                    </div>
+                    <div class="category-card" id="cat-audio">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+                                <path
+                                    d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+                            </svg>
+                        </div>
+                        <h3>Audio &amp; Wearables</h3>
+                        <p>Headphones, earbuds, speakers and smartwatches</p>
+                    </div>
+                    <div class="category-card" id="cat-accessories">
+                        <div class="category-icon">
+                            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <path d="M18 20V10" />
                                 <path d="M12 20V4" />
                                 <path d="M6 20v-6" />
                             </svg>
                         </div>
-                        <h3>Accessories & More</h3>
-                        <p>Chargers, cables, earbuds, smartwatches, power banks, and everything you need for your
-                            devices.</p>
-                        <ul class="service-features">
-                            <li>Chargers & Power Banks</li>
-                            <li>Cables & Adapters</li>
-                            <li>Audio & Wearables</li>
-                            <li>Keyboards & Mice</li>
-                        </ul>
+                        <h3>Accessories</h3>
+                        <p>Chargers, cables, power banks, keyboards, mice and cases</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Products Brands Section -->
-    <section class="section products" id="products">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Brands</span>
-                <h2 class="section-title">Trusted <span class="gradient-text">Brands</span> We Carry</h2>
-                <p class="section-desc">We partner with the world's leading technology brands to bring you the best.</p>
-            </div>
-            <div class="brands-marquee">
-                <div class="brands-track">
-                    <div class="brand-item">
-                        <span class="brand-name">Apple</span>
+        <!-- Why Us Section -->
+        <section class="section why-us" id="why-us">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Why DGDsmart</span>
+                    <h2 class="section-title">Why Choose <span class="gradient-text">Us</span></h2>
+                    <p class="section-desc">We go above and beyond to deliver the best tech experience in Gostivar.</p>
+                </div>
+                <div class="why-grid">
+                    <div class="why-card" id="why-prices">
+                        <div class="why-number">01</div>
+                        <h3>Competitive Prices</h3>
+                        <p>Fair pricing on products and repairs, so you get real value instead of a padded invoice.</p>
                     </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Samsung</span>
+                    <div class="why-card" id="why-warranty">
+                        <div class="why-number">02</div>
+                        <h3>Warranty &amp; Support</h3>
+                        <p>Products and repair work both come with warranty, and our after-sales support means you are
+                            never left without help.</p>
                     </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Xiaomi</span>
+                    <div class="why-card" id="why-genuine">
+                        <div class="why-number">03</div>
+                        <h3>Genuine Products</h3>
+                        <p>Only original products and parts from authorised distributors. No imitations, no compromises.
+                        </p>
                     </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Lenovo</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">HP</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Dell</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Asus</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Huawei</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">JBL</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Anker</span>
-                    </div>
-                    <!-- Duplicate for seamless loop -->
-                    <div class="brand-item">
-                        <span class="brand-name">Apple</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Samsung</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Xiaomi</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Lenovo</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">HP</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Dell</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Asus</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Huawei</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">JBL</span>
-                    </div>
-                    <div class="brand-item">
-                        <span class="brand-name">Anker</span>
+                    <div class="why-card" id="why-location">
+                        <div class="why-number">04</div>
+                        <h3>Convenient Location</h3>
+                        <p>In the centre of Gostivar on JNA 71 — easy to reach whether you are buying or dropping off a
+                            repair.</p>
                     </div>
                 </div>
             </div>
-            <div class="product-categories">
-                <div class="category-card" id="cat-desktops">
-                    <div class="category-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                            <line x1="8" y1="21" x2="16" y2="21" />
-                            <line x1="12" y1="17" x2="12" y2="21" />
-                        </svg>
-                    </div>
-                    <h3>Desktops</h3>
-                    <p>Custom-built and pre-built PCs for every need</p>
-                </div>
-                <div class="category-card" id="cat-laptops">
-                    <div class="category-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path
-                                d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0l1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
-                        </svg>
-                    </div>
-                    <h3>Laptops</h3>
-                    <p>For work, gaming, and everything in between</p>
-                </div>
-                <div class="category-card" id="cat-tablets">
-                    <div class="category-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
-                            <line x1="12" y1="18" x2="12.01" y2="18" />
-                        </svg>
-                    </div>
-                    <h3>Tablets</h3>
-                    <p>Portable power for creativity and entertainment</p>
-                </div>
-                <div class="category-card" id="cat-audio">
-                    <div class="category-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-                            <path
-                                d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-                        </svg>
-                    </div>
-                    <h3>Audio</h3>
-                    <p>Headphones, earbuds, and speakers for every need</p>
-                </div>
-                <div class="category-card" id="cat-wearables">
-                    <div class="category-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <circle cx="12" cy="12" r="7" />
-                            <polyline points="12 9 12 12 13.5 13.5" />
-                            <path
-                                d="M16.51 17.35l-.35 3.83a2 2 0 0 1-2 1.82H9.83a2 2 0 0 1-2-1.82l-.35-3.83m.01-10.7l.35-3.83A2 2 0 0 1 9.83 1h4.35a2 2 0 0 1 2 1.82l.35 3.83" />
-                        </svg>
-                    </div>
-                    <h3>Wearables</h3>
-                    <p>Smartwatches and fitness trackers</p>
-                </div>
-                <div class="category-card" id="cat-accessories">
-                    <div class="category-icon">
-                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                            stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M18 20V10" />
-                            <path d="M12 20V4" />
-                            <path d="M6 20v-6" />
-                        </svg>
-                    </div>
-                    <h3>Accessories</h3>
-                    <p>Chargers, cables, peripherals, and more</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Why Us Section -->
-    <section class="section why-us" id="why-us">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Why DGDsmart</span>
-                <h2 class="section-title">Why Choose <span class="gradient-text">Us</span></h2>
-                <p class="section-desc">We go above and beyond to deliver the best tech experience in Gostivar.</p>
-            </div>
-            <div class="why-grid">
-                <div class="why-card" id="why-prices">
-                    <div class="why-number">01</div>
-                    <h3>Competitive Prices</h3>
-                    <p>We ensure our prices are fair and competitive so you get the best value for your money.</p>
+        <!-- Reviews -->
+        <section class="section reviews" id="reviews">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Reviews</span>
+                    <h2 class="section-title">What Our <span class="gradient-text">Customers Say</span></h2>
+                    <p class="section-desc">Our reputation is built in the shop, one device at a time.</p>
                 </div>
-                <div class="why-card" id="why-warranty">
-                    <div class="why-number">02</div>
-                    <h3>Warranty & Support</h3>
-                    <p>All our products come with warranty, and our after-sales support ensures you're never left
-                        without help.</p>
-                </div>
-                <div class="why-card" id="why-genuine">
-                    <div class="why-number">03</div>
-                    <h3>Genuine Products</h3>
-                    <p>Only original, genuine products from authorized distributors. No imitations, no compromises.</p>
-                </div>
-                <div class="why-card" id="why-location">
-                    <div class="why-number">04</div>
-                    <h3>Convenient Location</h3>
-                    <p>Located in the center of Gostivar on JNA 71, easily accessible for all your tech needs.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Get in Touch</span>
-                <h2 class="section-title">Contact <span class="gradient-text">Us</span></h2>
-                <p class="section-desc">Visit us in-store or reach out — we're always happy to help.</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <div class="contact-card glass-card" id="contact-address">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                                <circle cx="12" cy="10" r="3" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h4>Visit Our Store</h4>
-                            <p>JNA 71, Gostivar 1230<br>North Macedonia</p>
-                        </div>
-                    </div>
-                    <div class="contact-card glass-card" id="contact-phone">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h4>Call Us</h4>
-                            <p><a href="tel:+38970251225">070 251 225</a></p>
-                            <p><a href="tel:+38972232323">072 232 323</a></p>
-                        </div>
-                    </div>
-                    <div class="contact-card glass-card" id="contact-hours">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="12" cy="12" r="10" />
-                                <polyline points="12 6 12 12 16 14" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h4>Working Hours</h4>
-                            <p>Mon – Sat: 09:00 – 19:00<br>Sunday: Closed</p>
-                        </div>
-                    </div>
-                    <div class="contact-card glass-card" id="contact-social">
-                        <div class="contact-icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h4>Follow Us</h4>
-                            <p><a href="https://www.instagram.com/dgdsmart" target="_blank"
-                                    rel="noopener noreferrer">@dgdsmart on Instagram</a></p>
-                        </div>
+                <!-- OWNER: paste real customer quotes here. Template for one card:
+                <div class="review-card glass-card">
+                    <div class="review-stars" aria-label="5 out of 5">★★★★★</div>
+                    <p class="review-text">"Their exact words, copied from a real review."</p>
+                    <div class="review-author">
+                        <span class="review-avatar">AB</span>
+                        <div><strong>Customer Name</strong><span>Laptop screen replacement</span></div>
                     </div>
                 </div>
-                <div class="contact-map">
-                    <div class="map-wrapper glass-card">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1483.5!2d20.907689!3d41.7937657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1351570f60db8c5d%3A0xbf37459f077760a7!2sDGD%20smart!5e0!3m2!1sen!2smk!4v1700000000000"
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade" title="DGDsmart Location">
-                        </iframe>
+                -->
+
+                <div class="reviews-cta">
+                    <div class="reviews-cta-card glass-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <h3>Read reviews on Google</h3>
+                        <p>See what people in Gostivar say about the shop and the service.</p>
+                        <a class="btn btn-outline btn-sm"
+                            href="https://www.google.com/maps/search/?api=1&amp;query=DGD%20smart%20Gostivar"
+                            target="_blank" rel="noopener noreferrer">Open in Google Maps</a>
+                    </div>
+                    <div class="reviews-cta-card glass-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                        <h3>Follow us on Instagram</h3>
+                        <p>New arrivals, repair jobs and offers, posted as they happen.</p>
+                        <a class="btn btn-outline btn-sm" href="https://www.instagram.com/dgdsmart" target="_blank"
+                            rel="noopener noreferrer">@dgdsmart</a>
+                    </div>
+                    <div class="reviews-cta-card glass-card">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path
+                                d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z" />
+                        </svg>
+                        <h3>Been here before?</h3>
+                        <p>A short review helps other people in Gostivar find an honest repair shop.</p>
+                        <a class="btn btn-outline btn-sm"
+                            href="https://www.google.com/maps/search/?api=1&amp;query=DGD%20smart%20Gostivar"
+                            target="_blank" rel="noopener noreferrer">Leave a review</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq" id="faq">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">FAQ</span>
+                    <h2 class="section-title">Common <span class="gradient-text">Questions</span></h2>
+                    <p class="section-desc">The things people ask us most before bringing a device in.</p>
+                </div>
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Do I need an appointment for a repair?</summary>
+                        <div class="faq-answer">
+                            <p>No. You can walk into the shop at JNA 71 during working hours. Sending the repair form or
+                                a message first just means we can prepare and answer you faster.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How long does a repair take?</summary>
+                        <div class="faq-answer">
+                            <p>It depends on the fault and on parts availability. Simple jobs are often done quickly,
+                                while board-level work or ordered parts take longer. You get a timeframe together with
+                                the quote, before we start.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>How much will it cost?</summary>
+                        <div class="faq-answer">
+                            <p>We quote after diagnostics, because the same symptom can have very different causes. The
+                                price is agreed with you before any work begins — there are no surprise charges at
+                                pickup.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Will I lose my data?</summary>
+                        <div class="faq-answer">
+                            <p>We work to preserve your data, and we tell you in advance if a repair carries any risk to
+                                it. Where a drive is already failing, we offer data recovery. Backing up before you hand
+                                the device over is always the safest move.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Is there a warranty on repairs?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. Repair work and the parts we fit are covered by warranty. If the same fault returns
+                                within that period, bring the device back to us.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Can you build a PC to my budget?</summary>
+                        <div class="faq-answer">
+                            <p>That is one of our favourite jobs. Tell us what you will use it for — gaming, office,
+                                editing, study — and your budget, and we will put together a build, assemble it and set
+                                it up.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>Do you repair devices you did not sell?</summary>
+                        <div class="faq-answer">
+                            <p>Yes. It does not matter where the device came from. Laptops, desktops, phones, tablets,
+                                consoles and most consumer electronics are welcome.</p>
+                        </div>
+                    </details>
+                    <details class="faq-item">
+                        <summary>What if the device cannot be fixed?</summary>
+                        <div class="faq-answer">
+                            <p>We tell you honestly, explain why, and where it makes sense we suggest a replacement or a
+                                cheaper alternative rather than spending money on a lost cause.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Book a Repair -->
+        <section class="section book" id="book">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Book a Repair</span>
+                    <h2 class="section-title">Tell Us What <span class="gradient-text">Broke</span></h2>
+                    <p class="section-desc">Fill this in and it opens a ready-made message to our shop — no account, no
+                        waiting on hold.</p>
+                </div>
+                <div class="book-grid">
+                    <form class="book-form glass-card" id="repairForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="rf-name">Your name <span class="req" aria-hidden="true">*</span></label>
+                                <input type="text" id="rf-name" name="name" autocomplete="name" required
+                                    placeholder="e.g. John">
+                                <span class="form-error" data-error-for="rf-name"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="rf-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                                <input type="tel" id="rf-phone" name="phone" autocomplete="tel" required
+                                    placeholder="e.g. 070 123 456">
+                                <span class="form-error" data-error-for="rf-phone"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label for="rf-device">Device type <span class="req" aria-hidden="true">*</span></label>
+                                <select id="rf-device" name="device" required>
+                                    <option value="">Choose…</option>
+                                    <option>Laptop</option>
+                                    <option>Desktop PC</option>
+                                    <option>Phone</option>
+                                    <option>Tablet</option>
+                                    <option>Smartwatch</option>
+                                    <option>Console</option>
+                                    <option>Other electronics</option>
+                                </select>
+                                <span class="form-error" data-error-for="rf-device"></span>
+                            </div>
+                            <div class="form-field">
+                                <label for="rf-model">Brand &amp; model</label>
+                                <input type="text" id="rf-model" name="model" placeholder="e.g. Lenovo IdeaPad 3">
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="rf-issue">What is wrong? <span class="req" aria-hidden="true">*</span></label>
+                            <textarea id="rf-issue" name="issue" rows="4" required
+                                placeholder="Describe the problem — when it started, what you already tried…"></textarea>
+                            <span class="form-error" data-error-for="rf-issue"></span>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-accent btn-block">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg>
+                                Send via WhatsApp
+                            </button>
+                            <button type="button" class="btn btn-outline btn-block" id="sendByEmail">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-10 6L2 7" />
+                                </svg>
+                                Send by email
+                            </button>
+                        </div>
+                        <p class="form-note">Nothing is stored on this site — the buttons simply open WhatsApp or your
+                            mail app with the details already written out. You press send, we reply during working
+                            hours.</p>
+                    </form>
+
+                    <aside class="book-side">
+                        <div class="book-side-card glass-card">
+                            <h3>Prefer to just talk?</h3>
+                            <p>Call the shop and describe the problem — often that is the fastest way to know if it is
+                                worth bringing in.</p>
+                            <a href="tel:+38970251225" class="book-side-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                070 251 225
+                            </a>
+                            <a href="tel:+38972232323" class="book-side-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                                072 232 323
+                            </a>
+                            <a href="mailto:dgdsmart@gmail.com" class="book-side-link">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-10 6L2 7" />
+                                </svg>
+                                dgdsmart@gmail.com
+                            </a>
+                        </div>
+                        <div class="book-side-card glass-card">
+                            <h3>Before you come in</h3>
+                            <ul class="book-checklist">
+                                <li>Back up anything important, if the device still turns on</li>
+                                <li>Bring the charger and any cables that came with it</li>
+                                <li>Know your screen lock or password — we need it to test</li>
+                                <li>Bring the warranty slip if the device is still covered</li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="section contact" id="contact">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-tag">Get in Touch</span>
+                    <h2 class="section-title">Visit the <span class="gradient-text">Shop</span></h2>
+                    <p class="section-desc">Come see the products in person, or drop off a device for repair.</p>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-card glass-card" id="contact-address">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                                    <circle cx="12" cy="10" r="3" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Visit Our Store</h4>
+                                <p>JNA 71, Gostivar 1230<br>North Macedonia</p>
+                                <p><a href="https://www.google.com/maps/search/?api=1&amp;query=DGD%20smart%20Gostivar"
+                                        target="_blank" rel="noopener noreferrer">Get directions</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-card glass-card" id="contact-phone">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <path
+                                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Call or Message</h4>
+                                <p><a href="tel:+38970251225">070 251 225</a></p>
+                                <p><a href="tel:+38972232323">072 232 323</a></p>
+                                <p><a href="https://wa.me/38970251225" target="_blank"
+                                        rel="noopener noreferrer">WhatsApp us</a></p>
+                            </div>
+                        </div>
+                        <div class="contact-card glass-card" id="contact-email">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <rect x="2" y="4" width="20" height="16" rx="2" />
+                                    <path d="m22 7-10 6L2 7" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p><a href="mailto:dgdsmart@gmail.com">dgdsmart@gmail.com</a></p>
+                                <p>Best for quotes, orders and anything you want in writing.</p>
+                            </div>
+                        </div>
+                        <div class="contact-card glass-card" id="contact-hours">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <polyline points="12 6 12 12 16 14" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Working Hours <span class="open-status" id="openStatus" hidden></span></h4>
+                                <p>Mon – Sat: 09:00 – 19:00<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                        <div class="contact-card glass-card" id="contact-social">
+                            <div class="contact-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                                    aria-hidden="true">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Follow Us</h4>
+                                <p><a href="https://www.instagram.com/dgdsmart" target="_blank"
+                                        rel="noopener noreferrer">@dgdsmart on Instagram</a></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-map">
+                        <div class="map-wrapper glass-card">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1483.5!2d20.907689!3d41.7937657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1351570f60db8c5d%3A0xbf37459f077760a7!2sDGD%20smart!5e0!3m2!1sen!2smk!4v1700000000000"
+                                width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade" title="DGDsmart location on Google Maps">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/logo.png" alt="DGDsmart" class="footer-logo">
-                    <p>Your trusted technology partner in Gostivar, North Macedonia. Quality products, expert service,
+                    <img src="images/logo.png" alt="DGDsmart" class="footer-logo" width="126" height="36">
+                    <p>Computer store and service centre in Gostivar, North Macedonia. Quality products, expert repairs,
                         competitive prices.</p>
                     <div class="footer-social">
                         <a href="https://www.instagram.com/dgdsmart" target="_blank" rel="noopener noreferrer"
-                            class="social-link" aria-label="Instagram">
+                            class="social-link" aria-label="DGDsmart on Instagram">
                             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/38970251225" target="_blank" rel="noopener noreferrer"
+                            class="social-link" aria-label="DGDsmart on WhatsApp">
+                            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path
+                                    d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z" />
+                                <path
+                                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.02h-.01c-1.48 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.2 8.23z" />
                             </svg>
                         </a>
                     </div>
@@ -546,34 +1156,76 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="#products">Products</a></li>
+                        <li><a href="#faq">FAQ</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
                 </div>
                 <div class="footer-links-group">
-                    <h4>Services</h4>
+                    <h4>Repairs</h4>
                     <ul>
-                        <li><a href="#service-repair">Device Repair</a></li>
-                        <li><a href="#service-sales">Computer Sales</a></li>
-                        <li><a href="#service-accessories">Accessories</a></li>
+                        <li><a href="#repairs">Laptops &amp; desktops</a></li>
+                        <li><a href="#repairs">Phones &amp; tablets</a></li>
+                        <li><a href="#repairs">Other electronics</a></li>
+                        <li><a href="#process">How it works</a></li>
+                        <li><a href="#book">Book a repair</a></li>
                     </ul>
                 </div>
                 <div class="footer-links-group">
                     <h4>Contact</h4>
                     <ul>
                         <li>JNA 71, Gostivar 1230</li>
+                        <li>Mon – Sat: 09:00 – 19:00</li>
                         <li><a href="tel:+38970251225">070 251 225</a></li>
                         <li><a href="tel:+38972232323">072 232 323</a></li>
+                        <li><a href="mailto:dgdsmart@gmail.com">dgdsmart@gmail.com</a></li>
                         <li><a href="https://www.instagram.com/dgdsmart" target="_blank"
                                 rel="noopener noreferrer">@dgdsmart</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 DGDsmart. All rights reserved.</p>
+                <p>&copy; <span id="year">2026</span> DGDsmart. All rights reserved.</p>
                 <p class="footer-tagline">Made with 💙 in Gostivar</p>
             </div>
         </div>
     </footer>
+
+    <!-- Floating quick actions -->
+    <div class="fab-stack">
+        <a class="fab fab-whatsapp" href="https://wa.me/38970251225" target="_blank" rel="noopener noreferrer"
+            aria-label="Message DGDsmart on WhatsApp">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path
+                    d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.95 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.22 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.7.25-1.29.17-1.42-.07-.13-.27-.2-.57-.35z" />
+                <path
+                    d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.87 9.87 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0 0 12.04 2zm0 18.02h-.01c-1.48 0-2.94-.4-4.21-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.22 8.22 0 0 1-1.26-4.38c0-4.54 3.7-8.23 8.24-8.23 2.2 0 4.27.86 5.82 2.42a8.18 8.18 0 0 1 2.41 5.82c0 4.54-3.69 8.23-8.2 8.23z" />
+            </svg>
+            <span class="fab-tip">WhatsApp</span>
+        </a>
+        <a class="fab fab-mail" href="mailto:dgdsmart@gmail.com" aria-label="Email DGDsmart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-10 6L2 7" />
+            </svg>
+            <span class="fab-tip">Email us</span>
+        </a>
+        <a class="fab fab-call" href="tel:+38970251225" aria-label="Call DGDsmart">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+            </svg>
+            <span class="fab-tip">Call us</span>
+        </a>
+        <button class="fab fab-top" id="backToTop" aria-label="Back to top" hidden>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <line x1="12" y1="19" x2="12" y2="5" />
+                <polyline points="5 12 12 5 19 12" />
+            </svg>
+        </button>
+    </div>
 
     <script src="script.js"></script>
 </body>
